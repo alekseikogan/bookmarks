@@ -9,7 +9,7 @@ SECRET_KEY = 'django-insecure-fy05kv=-mkeq8li%31lyb&_oviabm_odun=ift58idkjs8^6t0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -24,7 +24,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    
+    # 'social_django',  # 245 страница (pip и migrate сделать)
+    'django_extensions',
+    'images.apps.ImagesConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -123,4 +126,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    # 'social_core.backends.facebook.FacebookOAuth2',
 ]
