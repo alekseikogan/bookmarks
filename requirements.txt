@@ -8,3 +8,4 @@ werkzeug
 pyOpenSSL>=24.2.1
 requests==2.28.1
 easy-thumbnails==2.8.3
+python-dotenv>=1.0.1
