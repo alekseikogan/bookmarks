@@ -15,11 +15,11 @@ class UserRegistrationForm(forms.ModelForm):
                                widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repeat password',
                                 widget=forms.PasswordInput)
-    
+
     class Meta:
         model = User
         fields = ['username', 'first_name', 'email']
-    
+
     def clean_password2(self):
         cd = self.cleaned_data
         if cd['password'] != cd['password2']:
@@ -27,10 +27,10 @@ class UserRegistrationForm(forms.ModelForm):
         return cd['password2']
 
     def clean_email(self):
-       data = self.cleaned_data['email']
-       if User.objects.filter(email=data).exists():
-          raise forms.ValidationError('Email already in use.')
-       return data
+        data = self.cleaned_data['email']
+        if User.objects.filter(email=data).exists():
+            raise forms.ValidationError('Email already in use.')
+        return data
 
 
 class UserEditForm(forms.ModelForm):

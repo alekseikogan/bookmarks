@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 'social_django',  # 245 страница (pip и migrate сделать)
+    'social_django',  # 245 страница (pip и migrate сделать)
     'django_extensions',
     'images.apps.ImagesConfig',
 
