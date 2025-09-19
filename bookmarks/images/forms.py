@@ -7,14 +7,14 @@ from .models import Image
 
 
 class ImageCreateForm(forms.ModelForm):
-    
+
     class Meta:
         model = Image
         fields = ['title', 'url', 'description']
         widgets = {
             'url': forms.HiddenInput
         }
-    
+
     def clean_url(self):
         url = self.cleaned_data['url']
         valid_extensions = ['jpg', 'jpeg', 'png']
@@ -28,16 +28,16 @@ class ImageCreateForm(forms.ModelForm):
              force_insert=False,
              force_update=False,
              commit=True):
-        image = super().save(commit=False)  #  создание экземпляра модели
+        image = super().save(commit=False)  # создание экземпляра модели
         image_url = self.cleaned_data['url']
         name = slugify(image.title)  # для названия файла
         extension = image_url.rsplit('.', 1)[1].lower()
-        image_name = f'{name}.{extension}'  
+        image_name = f'{name}.{extension}'
         response = requests.get(image_url)
         # сохранить изображение в каталог media
-        image.save(image_name,
+        image.image.save(image_name,
                    ContentFile(response.content),
-                   save=False)  #  может тут надо image.image.... 291
+                   save=False)  # может тут надо image.image.... 291
         if commit:
             image.save()
         return image
