@@ -30,8 +30,19 @@ INSTALLED_APPS = [
     'social_django',  # 245 страница
     'django_extensions',
     'images.apps.ImagesConfig',
+    'easy_thumbnails',  # 310 страница
+    'sorl.thumbnail',
 
 ]
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
