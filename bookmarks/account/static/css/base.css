@@ -188,7 +188,7 @@ ul.messages li a.close {
     color:#fff;
 }
 .social li.facebook { background:#3b5399; }
-.social li.twitter { background:#151616; }
+.social li.twitter { background:#0d0d0e; }
 .social li.google { background:#de1710; }
 
 
@@ -211,7 +211,7 @@ ul.messages li a.close {
     padding:10px 20px;
     margin:20px 10px 0;
 }
-a.like, a.follow { float:right; margin-top:-8px; }
+a.like, a.follow{margin-top:-8px; }
 
 #image-list { overflow:hidden; }
 #image-list .image {
