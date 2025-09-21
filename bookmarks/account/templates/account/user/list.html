@@ -12,7 +12,9 @@
                     <img src="{{ im.url }}" alt="{{ user.get_full_name }}">
                 {% endthumbnail %}
             {% else %}
-                <img src="/static/images/default-avatar.png" alt="{{ user.get_full_name }}">
+                {% thumbnail user.profile.photo "180x180" crop="center" as im %}
+                    <img src="/static/images/default-avatar.jpg" alt="{{ user.get_full_name }}">
+                {% endthumbnail %}
             {% endif %}
         </a>
         <div class="info">
