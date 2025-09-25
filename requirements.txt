@@ -7,7 +7,6 @@ social-auth-app-django>=5.4.2
 werkzeug
 pyOpenSSL>=24.2.1
 requests==2.28.1
-easy-thumbnails==2.8.3
 sorl-thumbnail
 python-dotenv>=1.0.1
 django-debug-toolbar==3.6.0
