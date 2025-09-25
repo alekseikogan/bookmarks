@@ -33,11 +33,10 @@ INSTALLED_APPS = [
     'social_django',  # 245 страница
     'django_extensions',
     'images.apps.ImagesConfig',
-    'easy_thumbnails',  # 310 страница
+    # 'easy_thumbnails',  # 310 страница
     'sorl.thumbnail',
     'actions.apps.ActionsConfig',
     'debug_toolbar',  # 369 страница
-
 ]
 
 STORAGES = {
@@ -182,3 +181,8 @@ ABSOLUTE_URL_OVERRIDES = {
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type('application/javascript', '.js', True)
+    mimetypes.add_type('text/css', '.css', True)
