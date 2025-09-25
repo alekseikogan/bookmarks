@@ -30,17 +30,21 @@
     </div>
 
     <div class="image-likes">
+        <h3>People who liked this</h3>
         {% for user in image.users_like.all %}
-            <div>
+            <div class="user-like">
                 {% if user.profile.photo %}
-                    <img src="{{ user.profile.photo.url }}">
+                    <img src="{{ user.profile.photo.url }}" alt="{{ user.first_name }}" class="user-photo">
+                {% else %}
+                    <img src="/static/images/default-avatar.png" alt="{{ user.first_name }}" class="user-photo">
                 {% endif %}
                 <p>{{ user.first_name }}</p>
             </div>
         {% empty %}
-            Nobody likes this image yet.
+            <p>Nobody likes this image yet.</p>
         {% endfor %}
     </div>
+
 {% endwith %}
 {% endblock %}
 
