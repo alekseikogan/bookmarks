@@ -7,7 +7,7 @@ pip install -r requirements.txt
 python manage.py runserver_plus --cert-file cert.crt
 docker run -it --rm --name redis -p 6379:6379 redis
 
-С чем столкнулся по книге Меле:
+С чем столкнулся по книге Django 4 Меле:
 lsof -i :8000 - показать процессы и порты
 sudo fuser -k 8000/tcp -удалить все процессы занимающие порт 8000
 
